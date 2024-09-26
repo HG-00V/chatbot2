@@ -11,15 +11,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders.unstructured import UnstructuredFileLoader
 from langchain_community.vectorstores.faiss import FAISS
 from langchain_openai import ChatOpenAI
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.embeddings.cache import CacheBackedEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.storage import LocalFileStore
-
-# CacheBackedEmbeddings 사용 예시
-cache_dir = LocalFileStore("./.cache/embeddings")
-embeddings = OpenAIEmbeddings()
-cached_embeddings = CacheBackedEmbeddings.from_bytes_store(embeddings, cache_dir)
 
 # 프롬프트 템플릿
 RAG_PROMPT_TEMPLATE = """당신은 조선소 해양플랜트 설계전문가입니다. 검색된 다음 문맥을 사용하여 질문에 답하세요. 답을 모른다면 모른다고 답변하세요. 항상 한글로 답변하세요.
