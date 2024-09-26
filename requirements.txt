@@ -5,4 +5,3 @@ langchain-openai==0.0.2.post1
 openai<2.0.0,>=1.6.1
 unstructured==0.10.30
 python-magic==0.4.27
-scikit-learn==1.2.2
